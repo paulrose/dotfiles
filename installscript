@@ -109,7 +109,7 @@ apps=(
     slack
 
     visual-studio-code
-    sublime-text3
+    sublime-text
     coda
     navicat-premium
     filezilla
@@ -143,7 +143,6 @@ brew tap caskroom/versions
 echo "installing apps..."
 brew cask install --appdir=$appdir ${apps[@]}
 
-brew cask alfred link
 brew cleanup
 
 echo 'Install php'
