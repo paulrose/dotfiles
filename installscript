@@ -93,6 +93,59 @@ echo 'Install some nice quicklook plugins'
 echo '-----------------------------------'
 brew cask install --force qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql webp-quicklook suspicious-package
 
+echo 'Install some apps'
+echo '-----------------------------------'
+
+# Apps
+apps=(
+    alfred
+    spotify
+    steam
+    dropbox
+    evernote
+    firefox
+    google-chrome
+    skype
+    slack
+
+    visual-studio-code
+    sublime-text3
+    coda
+    navicat-premium
+    filezilla
+    github
+    sourcetree
+
+    microsoft-office
+    adobe-creative-cloud
+
+    docker
+    virtualbox
+    vagrant
+    iterm2
+    postman
+    dash
+
+    lastpass
+    expressvpn
+    grammarly
+    flux
+    spectacle
+    skyfonts
+)
+
+appdir="/Applications"
+
+# Tap alternative versions
+brew tap caskroom/versions
+
+# install apps
+echo "installing apps..."
+brew cask install --appdir=$appdir ${apps[@]}
+
+brew cask alfred link
+brew cleanup
+
 echo 'Install php'
 echo '-----------'
 brew install php@7.0
